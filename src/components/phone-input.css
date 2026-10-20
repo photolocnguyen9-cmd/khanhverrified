@@ -1,0 +1,150 @@
+/* Custom styles for intl-tel-input */
+.intl-tel-input-wrapper {
+    width: 100%;
+}
+
+.intl-tel-input-wrapper .iti {
+    width: 100%;
+    display: block;
+}
+
+.intl-tel-input-wrapper .iti__input {
+    width: 100%;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.intl-tel-input-wrapper .iti__input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.intl-tel-input-wrapper .iti__input.is-invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.intl-tel-input-wrapper .iti__input.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Flag dropdown button */
+.intl-tel-input-wrapper .iti__flag-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: auto;
+    left: 0;
+    padding: 0;
+}
+
+.intl-tel-input-wrapper .iti__selected-flag {
+    padding: 0 8px 0 8px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-radius: 0.375rem 0 0 0.375rem;
+    background-color: transparent;
+    border: none;
+}
+
+.intl-tel-input-wrapper .iti__selected-flag:hover,
+.intl-tel-input-wrapper .iti__selected-flag:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dropdown arrow */
+.intl-tel-input-wrapper .iti__arrow {
+    margin-left: 6px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #555;
+}
+
+.intl-tel-input-wrapper .iti__arrow--up {
+    border-top: none;
+    border-bottom: 4px solid #555;
+}
+
+/* Country dropdown */
+.intl-tel-input-wrapper .iti__country-list {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.375rem;
+    max-height: 200px;
+    margin-top: 4px;
+    background-color: #fff;
+    z-index: 1050;
+}
+
+.intl-tel-input-wrapper .iti__country {
+    padding: 8px 12px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.intl-tel-input-wrapper .iti__country:hover {
+    background-color: #f8f9fa;
+}
+
+.intl-tel-input-wrapper .iti__country.iti__highlight {
+    background-color: #e9ecef;
+}
+
+.intl-tel-input-wrapper .iti__country.iti__active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.intl-tel-input-wrapper .iti__country-name {
+    margin-left: 8px;
+    color: #212529;
+}
+
+.intl-tel-input-wrapper .iti__dial-code {
+    color: #6c757d;
+}
+
+.intl-tel-input-wrapper .iti__country.iti__active .iti__country-name,
+.intl-tel-input-wrapper .iti__country.iti__active .iti__dial-code {
+    color: #fff;
+}
+
+/* Selected dial code */
+.intl-tel-input-wrapper .iti__selected-dial-code {
+    margin-left: 8px;
+    color: #495057;
+    font-weight: 500;
+}
+
+/* Adjust input padding for flag */
+.intl-tel-input-wrapper .iti__input {
+    padding-left: 90px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .intl-tel-input-wrapper .iti__country-list {
+        max-height: 150px;
+    }
+}
+
+/* Loading state */
+.intl-tel-input-wrapper .iti__input[disabled] {
+    background-color: #e9ecef;
+    opacity: 1;
+}
